@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 49%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+#myInput2 {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 49%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
+}
+
+
+body {
+    background: linear-gradient(to bottom right, #66ccff 0%, #ffff66 100%);
+}
+
+
+
+</style>
+</head>
+<body>
+
+<h1>Abhyudaya Bank</h1>  
+
+<script> 
+//var fdate = new Date();
+//var cdate = new Date(new Date().getFullYear(),0,1);
+//var day = parseInt((fdate - cdate) / (1000 * 60 * 60 * 24), 10);
+//var last = (new Date().getFullYear()+'').slice(-1);
+//document.write(new Date().toLocaleDateString());
+//document.write(" : ")
+//document.write(last,"",day,);
+</script>
+
+
+
+
+<input type="text" id="myInput" onkeyup='searchTable()' placeholder="Type Branch Name or anything" title="Type Branch Name or anything">
+<input type="text" id="myInput2" onkeyup="myFunction()" placeholder="Type Branch Number" title="Type Branch Number">
+<script>
+
+function searchTable() {
+    var input, filter, found, table, tr, td, i, j;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td");
+        for (j = 0; j < td.length; j++) {
+            if (td[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                found = true;
+            }
+        }
+        if (found) {
+            tr[i].style.display = "";
+            found = false;
+        } else {
+            tr[i].style.display = "none";
+        }
+    }
+}
+</script>
+
+
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput2");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+
+
+
+
+<table id="myTable">
+ 
+
+  <tr class="header">
+            <th>Branch Name</th>
+            <th>br</th>
+            <th>Contact</th>
+            <th>IFSC Code</th>
+            <th>MICR CODE</th>
+            <th>District</th>
+            <th>Address</th>
+            <th>Pin Code</th>
+            <th>Email</th>
+    </tr>        
+  {% for x in mybranchs %}
+  <tr>
+            <td>{{x.BranchName}}</td>
+            <td>{{x.BranchCode}}</td>
+            <td>{{x.Contact}}</td>
+            <td>{{x.IFSCCode}}</td>
+            <td>{{x.MICRCODE}}</td>
+            <td>{{x.District}}</td>
+            <td>{{x.Address}}</td>
+            <td>{{x.PinCode}}</td>
+            <td>{{x.Email}}</td>
+        </tr>
+  {% endfor %}
+
+</table>
+</body>
+</html>

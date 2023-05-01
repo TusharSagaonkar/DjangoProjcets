@@ -1,0 +1,1598 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 49%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+#myInput2 {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 49%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
+}
+
+
+body {
+    background: linear-gradient(to bottom right, #66ccff 0%, #ffff66 100%);
+}
+
+
+
+</style>
+</head>
+<body>
+
+<h1>Abhyudaya Bank</h1>  
+
+<script> 
+//var fdate = new Date();
+//var cdate = new Date(new Date().getFullYear(),0,1);
+//var day = parseInt((fdate - cdate) / (1000 * 60 * 60 * 24), 10);
+//var last = (new Date().getFullYear()+'').slice(-1);
+//document.write(new Date().toLocaleDateString());
+//document.write(" : ")
+//document.write(last,"",day,);
+</script>
+
+
+
+
+<input type="text" id="myInput" onkeyup='searchTable()' placeholder="Type Branch Name or anything" title="Type Branch Name or anything">
+<input type="text" id="myInput2" onkeyup="myFunction()" placeholder="Type Branch Number" title="Type Branch Number">
+<script>
+
+function searchTable() {
+    var input, filter, found, table, tr, td, i, j;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td");
+        for (j = 0; j < td.length; j++) {
+            if (td[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                found = true;
+            }
+        }
+        if (found) {
+            tr[i].style.display = "";
+            found = false;
+        } else {
+            tr[i].style.display = "none";
+        }
+    }
+}
+</script>
+
+
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput2");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+
+
+
+
+<table id="myTable">
+ 
+
+  <tr class="header">
+            <th>Branch Name</th>
+            <th>br</th>
+            <th>Contact</th>
+            <th>IFSC Code</th>
+            <th>MICR CODE</th>
+            <th>CITY</th>
+            
+            <th>District</th>
+            <th>Address</th>
+            <th>Pin Code</th>
+            <th>Email</th>
+    </tr>
+   
+    <tr>
+            <td>Abyudaya Nagar</td>
+            <td>2</td>
+            <td>022-24702643, 24713947</td>
+            <td>ABHY0065002</td>
+            <td>400065002</td>
+            <td>MUMBAI</td>
+             
+            <td>GREATER MUMBAI</td>
+            <td>Abhyudaya Education Society, Opp. Building No. 18, Abhyudaya Nagar, Kalachowki, Mumbai- 400 033.</td>
+            <td>400002</td>
+            <td>abhyudayanagar002@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Bail Bazar</td>
+            <td>3</td>
+            <td>022-25032202, 25031746</td>
+            <td>ABHY0065003</td>
+            <td>400065003</td>
+            <td>MUMBAI</td>
+             
+            <td>GREATER MUMBAI</td>
+            <td>KMSPM'S School, Wadia Estate, Kurla (W), Mumbai - 400 070</td>
+            <td>400070</td>
+            <td>bailbazar003@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Bhandup</td>
+            <td>4</td>
+            <td>022-25964946 , 25963157</td>
+            <td>ABHY0065004</td>
+            <td>400065004</td>
+            <td>MUMBAI</td>
+             
+            <td>GREATER MUMBAI</td>
+            <td>Chetna Apartments, J.M.Road, Bhandup (W), Mumbai - 400 078</td>
+            <td>400078</td>
+            <td>bhandup004@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>DaruKhana</td>
+            <td>5</td>
+            <td>022-23728188, 23778164</td>
+            <td>ABHY0065005</td>
+            <td>400065005</td>
+            <td>MUMBAI</td>
+             
+            <td>GREATER MUMBAI</td>
+            <td>Potia Industrial Estate, Reay Road (E), Mumbai - 400 010</td>
+            <td>400010</td>
+            <td>darukhana005@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Fort</td>
+            <td>6</td>
+            <td>022-22614468, 22611690</td>
+            <td>ABHY0065006</td>
+            <td>400065006</td>
+            <td>MUMBAI</td>
+             
+            <td>GREATER MUMBAI</td>
+            <td>Abhyudaya Bank Bldg., 240 Ajaydeep Building, Fort, Mumbai - 400 001.</td>
+            <td>400001</td>
+            <td>fort006@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Ghatkopar</td>
+            <td>7</td>
+            <td>022-25116673, 25160626</td>
+            <td>ABHY0065007</td>
+            <td>400065007</td>
+            <td>MUMBAI</td>
+             
+            <td>GREATER MUMBAI</td>
+            <td>Unit No. 2, Silver Harmony Bldg., New Maneklal Estate, Ghatkopar (W), Mumbai - 400 086.</td>
+            <td>400086</td>
+            <td>ghatkopar007@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Kanjur Marg</td>
+            <td>8</td>
+            <td>022-25783519, 25781454</td>
+            <td>ABHY0065008</td>
+            <td>400065008</td>
+            <td>MUMBAI</td>
+             
+            <td>GREATER MUMBAI</td>
+            <td>Bhandari Co-op.Hsg. Society, Kanjur Village, Kanjur (E), Mumbai - 400 042</td>
+            <td>400042</td>
+            <td>kanjur008@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Nehru Nagar</td>
+            <td>9</td>
+            <td>022-25222386, 25230117</td>
+            <td>ABHY0065009</td>
+            <td>400065009</td>
+            <td>MUMBAI</td>
+             
+            <td>GREATER MUMBAI</td>
+            <td>Abhyudaya Bank Bldg., Nehru Nagar, Kurla (E), Mumbai - 400 024.</td>
+            <td>400024</td>
+            <td>nehrunagar009@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Parel</td>
+            <td>10</td>
+            <td>022-24137707, 24181943</td>
+            <td>ABHY0065010</td>
+            <td>400065010</td>
+            <td>MUMBAI</td>
+             
+            <td>GREATER MUMBAI</td>
+            <td>Shramsafalya Bldg., G.D. Ambekar Marg, Parel village, Mumbai-400012</td>
+            <td>400012</td>
+            <td>parel010@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Sewri</td>
+            <td>11</td>
+            <td>022-24136008, 24137453</td>
+            <td>ABHY0065011</td>
+            <td>400065011</td>
+            <td>MUMBAI</td>
+             
+            <td>GREATER MUMBAI</td>
+            <td>Navnidhi Industrial Estate, A.D. Marg, Sewri (W), Mumbai - 400 015</td>
+            <td>400015</td>
+            <td>sewri011@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Wadala</td>
+            <td>12</td>
+            <td>022-24184512, 24187125</td>
+            <td>ABHY0065012</td>
+            <td>400065012</td>
+            <td>MUMBAI</td>
+             
+            <td>GREATER MUMBAI</td>
+            <td>Nadkarni Park, BPT Colony, Wadala (E), Mumbai - 400 037</td>
+            <td>400037</td>
+            <td>wadala012@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Worli</td>
+            <td>13</td>
+            <td>022-24936704, 24921104</td>
+            <td>ABHY0065013</td>
+            <td>400065013</td>
+            <td>MUMBAI</td>
+             
+            <td>GREATER MUMBAI</td>
+            <td>Landmark Condominium, Plot no.1, Scheme no.61, J.M. Bhosale Marg, Mumbai - 400 018</td>
+            <td>400018</td>
+            <td>worli013@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Mumbra</td>
+            <td>14</td>
+            <td>022-25462172 , 25465585</td>
+            <td>ABHY0065014</td>
+            <td>400065014</td>
+            <td>Thane</td>
+             
+            <td>Thane</td>
+            <td>Rizvi Apartment, opp. Railway station, Mumbra (E) - 400 612</td>
+            <td>400612</td>
+            <td>mumbra014@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Turbhe</td>
+            <td>15</td>
+            <td>022-27888044, 27888613</td>
+            <td>ABHY0065015</td>
+            <td>400065015</td>
+            <td>Navi Mumbai</td>
+             
+            <td>Navi Mumbai</td>
+            <td>Apmc Onion Potato Market, Turbhe, Navi Mumbai - 400 705</td>
+            <td>400705</td>
+            <td>turbhe015@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Vashi</td>
+            <td>16</td>
+            <td>022-27892458, 27892410, </td>
+            <td>ABHY0065016</td>
+            <td>400065016</td>
+            <td>Navi Mumbai</td>
+             
+            <td>Navi Mumbai</td>
+            <td>Abhyudaya Bank Bldg., Sector - 17, Vashi, Navi Mumbai - 400 705.</td>
+            <td>400703</td>
+            <td>vashi016@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Mobile</td>
+            <td>17</td>
+            <td>022-27892444</td>
+            <td>ABHY0065017</td>
+            <td>400065017</td>
+            <td>Navi Mumbai</td>
+             
+            <td>Navi Mumbai</td>
+            <td>Abhyudaya Bank Bldg., Sector - 17, Vashi, Navi Mumbai - 400 705.</td>
+            <td>400703</td>
+            <td>mobile017@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>New Panvel</td>
+            <td>18</td>
+            <td>022-27453585, 27454270</td>
+            <td>ABHY0065018</td>
+            <td>400065018</td>
+            <td>Raigad</td>
+             
+            <td>Raigad</td>
+            <td>Abhyudaya Bank Bldg., Sector 17, New Panvel - 410 206</td>
+            <td>410206</td>
+            <td>newpanvel018@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Kalamboli</td>
+            <td>19</td>
+            <td>022-27420148, 27420186</td>
+            <td>ABHY0065019</td>
+            <td>400065019</td>
+            <td>Raigad</td>
+             
+            <td>Raigad</td>
+            <td>Sector 3 EB, Kalamboli - 410 218</td>
+            <td>410218</td>
+            <td>kalamboli019@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Dharavi</td>
+            <td>20</td>
+            <td>022-24077126, 24098603</td>
+            <td>ABHY0065020</td>
+            <td>400065020</td>
+            <td>MUMBAI</td>
+             
+            <td>GREATER MUMBAI</td>
+            <td>Western India Tanneries Compound, Sion Dharavi Road, Mumbai - 400017</td>
+            <td>400017</td>
+            <td>dharavi020@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Malad (East)</td>
+            <td>21</td>
+            <td>022-28885201, 28893727, 28800272</td>
+            <td>ABHY0065021</td>
+            <td>400065021</td>
+            <td>MUMBAI</td>
+             
+            <td>GREATER MUMBAI</td>
+            <td>148, Ellora Shopping Centre, Daftary Road, Malad (E), Mumbai-400097</td>
+            <td>400097</td>
+            <td>maladeast021@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>CBD Belapur</td>
+            <td>22</td>
+            <td>022-27572179, 27560257</td>
+            <td>ABHY0065022</td>
+            <td>400065022</td>
+            <td>Navi Mumbai</td>
+             
+            <td>Navi Mumbai</td>
+            <td>Sector 6, Chanakya Shop. Centre, Belapur (Cbd), Navi Mumbai- 400 614.</td>
+            <td>400614</td>
+            <td>cbdbelapur022@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Bhiwandi</td>
+            <td>23</td>
+            <td>02522-251852, 252308</td>
+            <td>ABHY0065023</td>
+            <td>400065023</td>
+            <td>Thane</td>
+             
+            <td>Thane</td>
+            <td>Kalyan Road, Kalyan Naka, Dandekar Company, Gopal Nagar, Bhiwandi - 421 302</td>
+            <td>421302</td>
+            <td>bhiwandi023@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Borivli</td>
+            <td>24</td>
+            <td>022-28636529, 28057103</td>
+            <td>ABHY0065024</td>
+            <td>400065024</td>
+            <td>MUMBAI</td>
+             
+            <td>GREATER MUMBAI</td>
+            <td>Ratnadeep Apartments, Carter Road No.1, Borivali (E), Mumbai - 400066</td>
+            <td>400066</td>
+            <td>borivali024@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Hill Road</td>
+            <td>25</td>
+            <td>022-26402597, 26405797</td>
+            <td>ABHY0065025</td>
+            <td>400065025</td>
+            <td>MUMBAI</td>
+             
+            <td>GREATER MUMBAI</td>
+            <td>Hill-N-Dale, Hill Road, Bandra (W), Mumbai - 400 050</td>
+            <td>400050</td>
+            <td>hillroad025@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Kher Nagar</td>
+            <td>26</td>
+            <td>022-26473470 , 26582006</td>
+            <td>ABHY0065026</td>
+            <td>400065026</td>
+            <td>MUMBAI</td>
+             
+            <td>GREATER MUMBAI</td>
+            <td>Janata Education Society, Kher Nagar, Bandra (E), Mumbai -400051</td>
+            <td>400051</td>
+            <td>khernagar026@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Kandivli (E)</td>
+            <td>27</td>
+            <td>022-28851962, 28846405</td>
+            <td>ABHY0065027</td>
+            <td>400065027</td>
+            <td>MUMBAI</td>
+             
+            <td>GREATER MUMBAI</td>
+            <td>Gundecha Indl. Complex, Akurli Road, Kandivali (W), Mumbai- 400101</td>
+            <td>400101</td>
+            <td>kandivli027@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Sherly Rajan</td>
+            <td>28</td>
+            <td>022-26047905, 26049137</td>
+            <td>ABHY0065028</td>
+            <td>400065028</td>
+            <td>MUMBAI</td>
+             
+            <td>GREATER MUMBAI</td>
+            <td>Khair House, Sherly Rajan Road, Bandra (W), Mumbai - 400 050</td>
+            <td>400050</td>
+            <td>sherlyrajan028@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Ganesh Nagar</td>
+            <td>29</td>
+            <td>022-25951049</td>
+            <td>ABHY0065029</td>
+            <td>400065029</td>
+            <td>MUMBAI</td>
+             
+            <td>GREATER MUMBAI</td>
+            <td>Navjivan Vidya Mandir, Ganesh Nagar, Bhandup (W), Mumbai - 400 078</td>
+            <td>400078</td>
+            <td>bhandupext029@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Malad (West)</td>
+            <td>30</td>
+            <td>022-28073539 , 28072094</td>
+            <td>ABHY0065030</td>
+            <td>400065030</td>
+            <td>MUMBAI</td>
+             
+            <td>GREATER MUMBAI</td>
+            <td>St.Jude's High School, Kharodi, Malad(W), Mumbai - 400 095</td>
+            <td>400095</td>
+            <td>malad030@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Nerul</td>
+            <td>31</td>
+            <td>022-27700558, 27717823</td>
+            <td>ABHY0065031</td>
+            <td>400065031</td>
+            <td>Navi Mumbai</td>
+             
+            <td>Navi Mumbai</td>
+            <td>Abhyudaya Bank Bldg.,Plot no.3A, Sector 15, Nerul, Navi Mumbai - 400 706</td>
+            <td>400706</td>
+            <td>nerul031@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Airoli</td>
+            <td>32</td>
+            <td>022-27792043 , 27790529</td>
+            <td>ABHY0065032</td>
+            <td>400065032</td>
+            <td>Navi Mumbai</td>
+             
+            <td>Navi Mumbai</td>
+            <td>Abhyudaya Bank Bldg., Plot no.26, Sector - 17, Airoli, Navi Mumbai - 400 701</td>
+            <td>400701</td>
+            <td>airoli032@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Andheri</td>
+            <td>34</td>
+            <td>022-26833207, 26845860</td>
+            <td>ABHY0065034</td>
+            <td>400065034</td>
+            <td>MUMBAI</td>
+             
+            <td>GREATER MUMBAI</td>
+            <td>Shraddha Shop. Centre, Old Nagardas Road, Andheri (E), Mumbai - 400069</td>
+            <td>400069</td>
+            <td>andheri034@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Nhava Sheva</td>
+            <td>35</td>
+            <td>022-27471237, 27471509</td>
+            <td>ABHY0065035</td>
+            <td>400065035</td>
+            <td>Raigad</td>
+             
+            <td>Raigad</td>
+            <td> Shop No.49,J.N.P.T. Shopping Complex, Nhava Sheva, Navi Mumbai - 400 707</td>
+            <td>400707</td>
+            <td>nhavasheva035@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Banking Complex</td>
+            <td>36</td>
+            <td>022-27832993, 27830425</td>
+            <td>ABHY0065036</td>
+            <td>400065036</td>
+            <td>Navi Mumbai</td>
+             
+            <td>Navi Mumbai</td>
+            <td>Unit No.7, Sector 19, Phase II, A.P.M.C., Vashi, Navi Mumbai - 400 705</td>
+            <td>400705</td>
+            <td>bankingcomplex036@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Koparkhairne</td>
+            <td>37</td>
+            <td>022-27544040, 27540020</td>
+            <td>ABHY0065037</td>
+            <td>400065037</td>
+            <td>Navi Mumbai</td>
+             
+            <td>Navi Mumbai</td>
+            <td>Unit NO.1, Plot no.24-25, Sector - 6, Koparkhairane, Navi Mumbai - 400 709</td>
+            <td>400709</td>
+            <td>koparkhairne037@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Dadar (W)</td>
+            <td>38</td>
+            <td>022-24384655 ,24325136</td>
+            <td>ABHY0065038</td>
+            <td>400065038</td>
+            <td>MUMBAI</td>
+             
+            <td>GREATER MUMBAI</td>
+            <td>Gurukrupa C.H.S.Ltd., Plot no.98, opp. Plaza Cinema, Dadar (W) -400028</td>
+            <td>400028</td>
+            <td>dadar038@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Mulund (W)</td>
+            <td>39</td>
+            <td>022-25641442 , 25918605</td>
+            <td>ABHY0065039</td>
+            <td>400065039</td>
+            <td>MUMBAI</td>
+             
+            <td>GREATER MUMBAI</td>
+            <td>'A' Wing, Neelkanthdhara, Netaji Subhashchandra Rd., opp. Dhanvantari hospital, Mulund (W), Mumbai - 400 080</td>
+            <td>400080</td>
+            <td>mulund039@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Charai, Thane</td>
+            <td>40</td>
+            <td>022-25393534, 25447077</td>
+            <td>ABHY0065040</td>
+            <td>400065040</td>
+            <td>Thane</td>
+             
+            <td>Thane</td>
+            <td>Mumba Devi Apartment., Joshiwada, Charai, Veer Savarkar Path, Thane (W) - 400601</td>
+            <td>400601</td>
+            <td>naupada040@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Lokmanya Nagar</td>
+            <td>41</td>
+            <td>022-25806049 , 25806751</td>
+            <td>ABHY0065041</td>
+            <td>400065041</td>
+            <td>Thane</td>
+             
+            <td>Thane</td>
+            <td>Panchpakhadi, Samarth CHS Ltd., Near Lokmanya Nagar Bus stop, Thane (W) - 400 606</td>
+            <td>400606</td>
+            <td>lokmanya041@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Deccan Gym, Pune</td>
+            <td>42</td>
+            <td>020-66012560/ 25513670</td>
+            <td>ABHY0065111</td>
+            <td>411065015</td>
+            <td>Pune</td>
+             
+            <td>Pune</td>
+            <td>Amit Samruddhi, off. Jangli Maharaj road, Shivaji Nagar, Pune - 411 004.</td>
+            <td>411004</td>
+            <td>deccan42@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Laxmi Road, Pune</td>
+            <td>43</td>
+            <td>020-24470805/ 24475286</td>
+            <td>ABHY0065103</td>
+            <td>411065003</td>
+            <td>Pune</td>
+             
+            <td>Pune</td>
+            <td>Nakoda Goldpitch,387,Ravivar Peth,Bohri Aali Lane, Sonya Maruti Chowk,Laxmi Road, Pune - 411 002.</td>
+            <td>411002</td>
+            <td>laxmiroad43@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Yerawada, Pune</td>
+            <td>44</td>
+            <td>020-26613493/26612355</td>
+            <td>ABHY0065104</td>
+            <td>411065004</td>
+            <td>Pune</td>
+             
+            <td>Pune</td>
+            <td>Om Mahavir Co-Op. Hsg. Society Ltd., Shop No.D1, D2, D3, D22 & D33, Survey No.1-A, Pune Nagar Road, Yerwada, , Pune- 411 006</td>
+            <td>411006</td>
+            <td>yerawada44@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Pimpri, Pune</td>
+            <td>46</td>
+            <td>020-27426288/27426289</td>
+            <td>ABHY0065105</td>
+            <td>411065006</td>
+            <td>Pune</td>
+             
+            <td>Pune</td>
+            <td>Sunshine Marks, Situated at C. T. S. No.4840, Mumbai - Pune Road, Opp. Babasaheb Ambedkar Statue, Pimpri Pune - 411 018.</td>
+            <td>411018</td>
+            <td>pimpri46@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Paud Phata, Pune</td>
+            <td>47</td>
+            <td>020-25446729</td>
+            <td>ABHY0065106</td>
+            <td>411065007</td>
+            <td>Pune</td>
+             
+            <td>Pune</td>
+            <td>Shop No.4, 5, 6 & Flat No.5, Mangalam Chambers, Bldg.No.1, S. No.47, Erandawana, Paud Road, Pune - 411 038</td>
+            <td>411038</td>
+            <td>paudphata47@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Baner, Pune</td>
+            <td>48</td>
+            <td>9765567651</td>
+            <td>ABHY0065107</td>
+            <td>411065008</td>
+            <td>Pune</td>
+             
+            <td>Pune</td>
+            <td>Tejas Eternity, S. No. 134, H. No. 5 6/1, Baner Balewadi Road, Baner, Pune - 411 045.</td>
+            <td>411045</td>
+            <td>baner48@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Dhankwadi, Pune</td>
+            <td>51</td>
+            <td>020-24377083/ 85</td>
+            <td>ABHY0065108</td>
+            <td>411065011</td>
+            <td>Pune</td>
+             
+            <td>Pune</td>
+            <td>Shiv Smarak Samiti, S. No. 40, Pune Satara Road, Opp. Konark Vihar, Dhankawadi, Pune - 411 043.</td>
+            <td>411043</td>
+            <td>dhankawdi51@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Wagholi, Pune</td>
+            <td>52</td>
+            <td>edit</td> 
+            <td>ABHY0065109</td>
+            <td>411065012</td>
+            <td>Pune</td>
+             
+            <td>Pune</td>
+            <td>S. No. 620, Pune Nagar Road, At-Post-Wagholi, Tal. Haveli, Dist. Pune Pin - 412 207</td>
+            <td>412207</td>
+            <td>wagholi52@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Singhagad, Pune</td>
+            <td>53</td>
+            <td>020-24308301/02</td>
+            <td>ABHY0065110</td>
+            <td>411065013</td>
+            <td>Pune</td>
+             
+            <td>Pune</td>
+            <td>Showroom No.1 & 3 In Sunit Riddhi Siddhi Building, Plot No.2B, Final Plot No.545, S. No.120A - 120B, Parvati, Sinhagad Road, Pune-411030</td>
+            <td>411030</td>
+            <td>sinhgad53@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Nana Peth, Pune</td>
+            <td>55</td>
+            <td>020-26332161/ 26332162</td>
+            <td>ABHY0065102</td>
+            <td>411065002</td>
+            <td>Pune</td>
+             
+            <td>Pune</td>
+            <td> 101, 201 & 355, Nana Peth, Pune - 411 002.</td>
+            <td>411002</td>
+            <td>nanapeth55@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Kharghar</td>
+            <td>56</td>
+            <td>022-27741002</td>
+            <td>ABHY0065042</td>
+            <td>400065042</td>
+            <td>Navi Mumbai</td>
+             
+            <td>Navi Mumbai</td>
+            <td>Shop No.66 & 67, Patel Heritage, Next To Hiranandani Complex, Plot No.15 & 17, Sector - 7, Kharghar - 410210</td>
+            <td>410210</td>
+            <td>kharghar056@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Vasai (E)</td>
+            <td>57</td>
+            <td>7020326136</td>
+            <td>ABHY0065043</td>
+            <td>400065043</td>
+            <td>Thane</td>
+             
+            <td>Thane</td>
+            <td> Om Shivshakti Complex, Vasai-Vajreshwari Road, Valiv Village, Vasai Road (E) - 401208.</td>
+            <td>410208</td>
+            <td>vasai057@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Vadodara, Mandvi</td>
+            <td>58</td>
+            <td>0265-2424149/ 2421988</td>
+            <td>ABHY0065201</td>
+            <td>390065002</td>
+            <td>Vadodara</td>
+             
+            <td>Vadodara</td>
+            <td>Shree Krishna Bhuvan, Near Champaner Gate, Bank Road, Mandvi, Vadodara - 390006</td>
+            <td>390006</td>
+            <td>baroda58@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Car Street</td>
+            <td>59</td>
+            <td>0820-2521077</td>
+            <td>ABHY0065301</td>
+            <td>576065002</td>
+            <td>Udupi</td>
+             
+            <td>Udupi</td>
+            <td>Sri Kaniyoor Mutt Bldg. 1st Flr., Car Street, Udupi - 576101</td>
+            <td>576101</td>
+            <td>carstreet59@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>City</td>
+            <td>60</td>
+            <td>0820-2520117 , 0820-2521687</td>
+            <td>ABHY0065302</td>
+            <td>576065003</td>
+            <td>Udupi</td>
+             
+            <td>Udupi</td>
+            <td>Shambhavi Fortune, Behind K.S.R.T.C. Bus Stand, Udupi - 576101</td>
+            <td>576101</td>
+            <td>city60@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Padubidri</td>
+            <td>61</td>
+            <td>0820-2556177</td>
+            <td>ABHY0065305</td>
+            <td>576065005</td>
+            <td>Udupi</td>
+             
+            <td>Udupi</td>
+            <td>Shri Shakti Complex, N.H. 66,Nadsal Village, Padubidri, Udupi Dist. -574 111</td>
+            <td>574111</td>
+            <td>padubidri61@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Mangalore Branch</td>
+            <td>62</td>
+            <td>0824-2494067</td>
+            <td>ABHY0065306</td>
+            <td>575065002</td>
+            <td>Mangalore</td>
+             
+            <td>Mangalore</td>
+            <td>Shop no.004,Janvi Plaza, Near Bunts Hostel, Karanglapady, Mangalore - 575003</td>
+            <td>575003</td>
+            <td>mangalore62@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Shirva</td>
+            <td>63</td>
+            <td>0820-2554287</td>
+            <td>ABHY0065304</td>
+            <td>576065004</td>
+            <td>Udupi</td>
+             
+            <td>Udupi</td>
+            <td>Mandara Bldg., Near Bus Stand, Shirva, Udupi - 574116</td>
+            <td>574116</td>
+            <td>shirva63@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Ghansoli</td>
+            <td>65</td>
+            <td>022-27549124, 27549142</td>
+            <td>ABHY0065044</td>
+            <td>400065044</td>
+            <td>Navi Mumbai</td>
+             
+            <td>Navi Mumbai</td>
+            <td>Shree Manoshi Complex, Shop No. 4, 5, 25 & 26, Sector - 3, Ghansoli, Navi Mumbai - 410 701</td>
+            <td>410701</td>
+            <td>ghansoli065@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Ajani Chawk, Nagpur</td>
+            <td>66</td>
+            <td>0712-2252714/ 2250715</td>
+            <td>ABHY0065112</td>
+            <td>440211251</td>
+            <td>Nagpur</td>
+             
+            <td>Nagpur</td>
+            <td>Bhagwan House, Plot No.1/A, Ajni Chowk, Wardha Road, Nagpur - 440015</td>
+            <td>440015</td>
+            <td>nagpur066@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Kamothe</td>
+            <td>67</td>
+            <td>022-27430041/27430042</td>
+            <td>ABHY0065045</td>
+            <td>400065045</td>
+            <td>Navi Mumbai</td>
+             
+            <td>Navi Mumbai</td>
+            <td>Shop No.7, 8, 9, 10 & 11, Ground Floor, Dharti Complex, Sector - 18, Plot No. 60/61, Kamothe - 411017</td>
+            <td>411017</td>
+            <td>kamothe067@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Station Road, Aurangabad (Gulmandi )</td>
+            <td>68</td>
+            <td>0240-2346043, 2367818</td>
+            <td>ABHY0065113</td>
+            <td>431065003</td>
+            <td>Aurangabad</td>
+             
+            <td>Aurangabad</td>
+            <td>Labh Peral, Beside Hotel VITS, Station Road, Aurangabad - 431 001</td>
+            <td>431001</td>
+            <td>aurangabad068@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Mithakhali</td>
+            <td>69</td>
+            <td>079-26589676</td>
+            <td>ABHY0065202</td>
+            <td>380065002</td>
+            <td>Ahmedabad</td>
+             
+            <td>Ahmedabad</td>
+            <td>Jaymangal House, Block, Near Gandhigram Railway Station, Mithakhali, Ellisbridge, Ahmedabad - 380009</td>
+            <td>380009</td>
+            <td>mithakhali069@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Manekchowk </td>
+            <td>70</td>
+            <td>079-22143710, 22143725</td>
+            <td>ABHY0065203</td>
+            <td>380065003</td>
+            <td>Ahmedabad</td>
+             
+            <td>Ahmedabad</td>
+            <td>Dahini Khadki, Opp. Ghanchi ni Pole, Manekchowk, Ahmedabad, - 380001.</td>
+            <td>380001</td>
+            <td>Manekchowk070@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Raipur</td>
+            <td>71</td>
+            <td>079-22142022</td>
+            <td>ABHY0065204</td>
+            <td>380065004</td>
+            <td>Ahmedabad</td>
+             
+            <td>Ahmedabad</td>
+            <td>Block No. E-1, Ghantakarna Mahavir Cloth Market, Raipur, Ahmedabad - 380002.</td>
+            <td>380002</td>
+            <td>raipur071@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Odhav</td>
+            <td>73</td>
+            <td>079-22871977</td>
+            <td>ABHY0065205</td>
+            <td>380065005</td>
+            <td>Ahmedabad</td>
+             
+            <td>Ahmedabad</td>
+            <td>Harshad Chamber, Opp. Vallabhnagar, Odhav, Ahmedabad - 380 021</td>
+            <td>380021</td>
+            <td>odhav073@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Ghatlodia</td>
+            <td>75</td>
+            <td>079-27475098 , 079-27470223</td>
+            <td>ABHY0065208</td>
+            <td>380065008</td>
+            <td>Ahmedabad</td>
+             
+            <td>Ahmedabad</td>
+            <td>1, Satyam, Manjushree CHS, Ghatlodia, Ahmedabad - 380 061.</td>
+            <td>380061</td>
+            <td>ghatlodia075@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Bhayandar</td>
+            <td>79</td>
+            <td>022-28140964/28040964</td>
+            <td>ABHY0065046</td>
+            <td>400065046</td>
+            <td>Thane</td>
+             
+            <td>Thane</td>
+            <td>Shop No.7 To 9 On Ground Floor and 107 To 111 On 1St Floor, Malhar Arcade, Navghar Phatak Road, Bhayandar (E) - 410 105.</td>
+            <td>410105</td>
+            <td>bhayander079@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Dahisar</td>
+            <td>80</td>
+            <td>022-28480321, 28480324</td>
+            <td>ABHY0065047</td>
+            <td>400065047</td>
+            <td>MUMBAI</td>
+             
+            <td>GREATER MUMBAI</td>
+            <td>Madhuram Hall, Harishankar Joshi Road, Dahisar (E), Mumbai - 400 068.</td>
+            <td>400068</td>
+            <td>Dahisar080@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Old Panvel</td>
+            <td>81</td>
+            <td>022-27459656/57</td>
+            <td>ABHY0065050</td>
+            <td>400065050</td>
+            <td>RAIGAD</td>
+             
+            <td>RAIGAD</td>
+            <td>Shop No.1 And 2, Kanak Vithal, Plot No.25, Opp. Sub Registrar Office No.2, Mcch Society, Old Panvel - 410206</td>
+            <td>410206</td>
+            <td>panvel081@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Kalyan (W)</td>
+            <td>82</td>
+            <td>0251-2203320 / 21</td>
+            <td>ABHY0065048</td>
+            <td>400065048</td>
+            <td>Thane</td>
+             
+            <td>Thane</td>
+            <td>Shop No. 15,16,17 Rose Building and Shop No. 18 Lotus Building, Ground Floor, Flower Valley, Khadakpada, Kalyan (W) -421301</td>
+            <td>421301</td>
+            <td>kalyan082@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Dombivali (E)</td>
+            <td>83</td>
+            <td>0251-2445863/ 2445828</td>
+            <td>ABHY0065049</td>
+            <td>400065049</td>
+            <td>Thane</td>
+             
+            <td>Thane</td>
+            <td>1St Floor, Jaikul Arcade, Manpada Road, Near Gavdevi Temple, Dombivali (E), 421201</td>
+            <td>421201</td>
+            <td>dombivli083@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Kandivali (W), Charkop</td>
+            <td>84</td>
+            <td>022-28678031/ 47</td>
+            <td>ABHY0065051</td>
+            <td>400065051</td>
+            <td>MUMBAI</td>
+             
+            <td>GREATER MUMBAI</td>
+            <td>Shop No. 7, Vijaybharti Co.Op. Hsg. Society, Sector No. 2, Charkop, Kandivali (W), Mumbai- 400067</td>
+            <td>400067</td>
+            <td>kandivli084@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Kankavali</td>
+            <td>85</td>
+            <td>02367-231160/61</td>
+            <td>ABHY0065114</td>
+            <td>416065501</td>
+            <td>Sindhudurg</td>
+             
+            <td>Sindhudurg</td>
+            <td> 3/16, Ground Floor, Shirsat Building, Appasaheb Patwardhan Chowk, Mumbai Goa Highway, Kankavali, Dist. Sindhudurg, Pin- 416602</td>
+            <td>416602</td>
+            <td>kankavli085@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Canada Corner, Nashik</td>
+            <td>86</td>
+            <td>0253-2232031</td>
+            <td>ABHY0065115</td>
+            <td>422065002</td>
+            <td>Nashik</td>
+             
+            <td>Nashik</td>
+            <td>Shop No. 3 & 4 & Office No.4, 5 & 6, Lucky Palace Apartments, Canada Corner, Sharanpur Trimbak Road, Nashik.</td>
+            <td>422005</td>
+            <td>nashik086@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Mira Road</td>
+            <td>87</td>
+            <td>022-28555200/244</td>
+            <td>ABHY0065052</td>
+            <td>400065052</td>
+            <td>Thane</td>
+             
+            <td>Thane</td>
+            <td> Shop No.6, 7 & 8, Ground Floor, Building No.A-63, 64, Sector No.1, Shanti Nagar, Mira Road (E) - 401107</td>
+            <td>401107</td>
+            <td>miraroad087@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Badlapur</td>
+            <td>88</td>
+            <td>0251-2693726/27</td>
+            <td>ABHY0065053</td>
+            <td>400065053</td>
+            <td>Thane</td>
+             
+            <td>Thane</td>
+            <td>Kulgaon Griha Nirman Society, Plot No.- 36, Gandhi Chowk, Kulgaon, Badlapur (E) - 421 503</td>
+            <td>421503</td>
+            <td>badlapur088@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Seawood</td>
+            <td>89</td>
+            <td>022-27719879/27711479</td>
+            <td>ABHY0065056</td>
+            <td>400065056</td>
+            <td>Navi Mumbai</td>
+             
+            <td>Navi Mumbai</td>
+            <td>Shop No. 13,14 & 15, giriraj Co-op. Hsg. Soc. Ltd., Plot No. 7 & 8, Nerul Seawood, Sector No. 44, NRI- Seawood Road, Seawood - 400706</td>
+            <td>400706</td>
+            <td>seawood089@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Ghodbunder Road</td>
+            <td>90</td>
+            <td>022-25971586, 25972195</td>
+            <td>ABHY0065057</td>
+            <td>400065057</td>
+            <td>Thane</td>
+             
+            <td>Thane</td>
+            <td>Siddhivinayk Arcade, Kailash Tower, Village- Owale, Owala Naka, Ghodbuder Road, Thane- 400 605</td>
+            <td>400605</td>
+            <td>Ghodbunder090@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Chembur</td>
+            <td>91</td>
+            <td>022-25262390/91</td>
+            <td>ABHY0065054</td>
+            <td>400065054</td>
+            <td>MUMBAI</td>
+             
+            <td>GREATER MUMBAI</td>
+            <td>Shop No.12 To 19, Bldg. No. 2, Tilaknagar Shramik Co-Op. Hsg. Society Ltd., Tilaknagar, Chembur, Mumbai- 400 089</td>
+            <td>400089</td>
+            <td>chembur091@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Virar</td>
+            <td>92</td>
+            <td>0250-0250-2524161/4261</td>
+            <td>ABHY0065055</td>
+            <td>400065055</td>
+            <td>Thane</td>
+             
+            <td>Thane</td>
+            <td>Mataji Kripa, Opp. Mahanagarpalika Library, Phool Pada Road, Virar (E) - 401303 </td>
+            <td>401303</td>
+            <td>virar092@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Chakan</td>
+            <td>93</td>
+            <td>02135-249187</td>
+            <td>ABHY0065116</td>
+            <td>411065016</td>
+            <td>Pune</td>
+             
+            <td>Pune</td>
+            <td>Anand Building, Ground Floor, Main Bazar Peth, Near Chakan S.T. Stand, Old Pune- Nashik Road, Chakan, Dist- Pune- 410 501.</td>
+            <td>410501</td>
+            <td>chakan093@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Antop Hill</td>
+            <td>94</td>
+            <td>022-24092210, 24091110</td>
+            <td>ABHY0065058</td>
+            <td>400065058</td>
+            <td>MUMBAI</td>
+             
+            <td>GREATER MUMBAI</td>
+            <td>Shop No. 34 & 35, Ground Floor, Building No. B-2, Kalpak Estate, Shaikh Mistri Road, Antop Hill - 400037</td>
+            <td>400037</td>
+            <td>antophill094@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Nallasopara</td>
+            <td>95</td>
+            <td>9607028512 / 9607028412</td>
+            <td>ABHY0065059</td>
+            <td>400065059</td>
+            <td>Thane</td>
+             
+            <td>Thane</td>
+            <td>Shop No. 1 &2, Ground Floor, "Olive Apartment", Building No. 6, Shreeprasta, Sector- 7, Nallasopara (W), Taluka:- Vasai, Thane- 401 203.</td>
+            <td>401203</td>
+            <td>nallasopara095@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Divale, Belapur.</td>
+            <td>96</td>
+            <td>022-27563509/ 19</td>
+            <td>ABHY0065060</td>
+            <td>400065060</td>
+            <td>Navi Mumbai</td>
+             
+            <td>Navi Mumbai</td>
+            <td>Shop No. 8 A & 9, Ground Flr., Sai Sangam, Sector- 15, Sakal Bhavan Marg, CBD- Belapur, Navi Mumbai- 400 614.</td>
+            <td>400614</td>
+            <td>divale096@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Khanda Colony, Panvel</td>
+            <td>97</td>
+            <td>022-27490760/ 61</td>
+            <td>ABHY0065061</td>
+            <td>400065061</td>
+            <td>Raigad</td>
+             
+            <td>Raigad</td>
+            <td>Shop No. 30 to 33, Ground Floor, Shreeji Sangh, Plot No. 15 & 16, Sector- 7, Khanda Colony, New Panvel- 410 206</td>
+            <td>410206</td>
+            <td>khanda097@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Kalwa</td>
+            <td>98</td>
+            <td>022-25406301/02</td>
+            <td>ABHY0065062</td>
+            <td>400065062</td>
+            <td>Thane</td>
+             
+            <td>Thane</td>
+            <td>Milestone corporate park, Dattawadi Old Mumbai Pune Road, Kalwa (W)- 400605</td>
+            <td>400605</td>
+            <td>kalwa098@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Ambad Link Road, CIDCO, Nashik</td>
+            <td>99</td>
+            <td>0253-2399713/ 514</td>
+            <td>ABHY0065117</td>
+            <td>422065003</td>
+            <td>Nashik</td>
+             
+            <td>Nashik</td>
+            <td>Shop No. 1 to 5, Lotus Plaza, Trimurti Chowk, Ambad Link Road, New Nashik, CIDCO, Nashik- 422 008.</td>
+            <td>422008</td>
+            <td>nashikambad099@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Nashik Road </td>
+            <td>100</td>
+            <td>0253-2459921/ 22</td>
+            <td>ABHY0065118</td>
+            <td>422065004</td>
+            <td>Nashik</td>
+             
+            <td>Nashik</td>
+            <td>Rajan Complex, Datta Mandir Stop, Nashik Pune Highway, Nashik- 422 101.</td>
+            <td>422101</td>
+            <td>nashikroad100@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Garkheda, Aurangabad</td>
+            <td>101</td>
+            <td>0240-2405659/69</td>
+            <td>ABHY0065119</td>
+            <td>431065004</td>
+            <td>Aurangabad</td>
+             
+            <td>Aurangabad</td>
+            <td>Shop No.1&2, Malani Chambers, Plot No.5, Shivaji Nagar Road, Garkheda, Aurangabad - 431005</td>
+            <td>431005</td>
+            <td>garkheda101@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Nagpur-C.A. Road</td>
+            <td>102</td>
+            <td>0712-2739918, 2739718</td>
+            <td>ABHY0065121</td>
+            <td>440211252</td>
+            <td>Nagpur</td>
+             
+            <td>Nagpur</td>
+            <td>Gandhi Grain Market, Old Bagadgunj Layout, Chapru Chowk, C. A. Road, Nagpur - 440008</td>
+            <td>440008</td>
+            <td>nagpurca102@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Ashok Nagar, Nanded </td>
+            <td>103</td>
+            <td>02462-254030/253230</td>
+            <td>ABHY0065120</td>
+            <td>431065102</td>
+            <td>Nanded</td>
+             
+            <td>Nanded</td>
+            <td>Ground Floor, 69, Ashok Nagar, Workshop-Bhagyanagr Road, Nanded - 431605</td>
+            <td>431605</td>
+            <td>nanded103@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Dombivali (W)</td>
+            <td>104</td>
+            <td>0251-2489860/ 20</td>
+            <td>ABHY0065063</td>
+            <td>400065063</td>
+            <td>Thane</td>
+             
+            <td>Thane</td>
+            <td>Janki Heights, Opp. Shivsena Shakha, Deen Dayal Road, Dombivali (W) - 421202</td>
+            <td>421202</td>
+            <td>dombivli104@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Goregaon (W), Shastri Nagar, </td>
+            <td>105</td>
+            <td>022-28711793, 28712348</td>
+            <td>ABHY0065064</td>
+            <td>400065064</td>
+            <td>MUMBAI</td>
+             
+            <td>GREATER MUMBAI</td>
+            <td>Shop No. 2,3,5,& 6A, Vrindavan CHS Ltd., Building No. 9, Shashtri Nagar Road No. 1, Goregaon (W), Mumbai- 400 104</td>
+            <td>400104</td>
+            <td>goregaon105@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Sarvodaya Nagar, Jogeshwari (E)</td>
+            <td>106</td>
+            <td>022-28320628/29</td>
+            <td>ABHY0065065</td>
+            <td>400065065</td>
+            <td>MUMBAI</td>
+             
+            <td>GREATER MUMBAI</td>
+            <td>Bal Vikas School Building, Ground Floor, MHADA Colony, Sarvodaya Nagar, Jogeshwari (E), Mumbai- 400 060.</td>
+            <td>400060</td>
+            <td>jogeshwari106@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Kalyan (E)</td>
+            <td>107</td>
+            <td>0251-2362365/66</td>
+            <td>ABHY0065066</td>
+            <td>400065066</td>
+            <td>Thane</td>
+             
+            <td>Thane</td>
+            <td>Khushi Heights, Poona Link Road, Opp. Nitin Raj Hotel, Katemanivali, Kalyan (E), Dist. Thane - 421 306.</td>
+            <td>421306</td>
+            <td>kalyan107@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Diva (E)</td>
+            <td>108</td>
+            <td>022-25318101/ 25318201</td>
+            <td>ABHY0065067</td>
+            <td>400065067</td>
+            <td>Thane</td>
+             
+            <td>Thane</td>
+            <td>Shree Krishna Park, Near Shiv Sena Shakha, Diva (E), Thane- 400612</td>
+            <td>400612</td>
+            <td>diva108@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Anjur Phata, Bhiwandi</td>
+            <td>109</td>
+            <td>02522-278055/ 278065</td>
+            <td>ABHY0065068</td>
+            <td>400065068</td>
+            <td>Thane</td>
+             
+            <td>Thane</td>
+            <td>Som Shiv Plaza, Anjur Phata, Kamatghar, Agra Road, Bhiwandi - 421 302.</td>
+            <td>421302</td>
+            <td>bhiwandi109@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Marve Link Road, Kandivli (W)</td>
+            <td>110</td>
+            <td>022-28680471/72</td>
+            <td>ABHY0065069</td>
+            <td>400065069</td>
+            <td>MUMBAI</td>
+             
+            <td>GREATER MUMBAI</td>
+            <td>Shop No.S-109, Rajiv Gandhi Commercial Complex, Ekta Nagar, Charkop Marve Link Road, Kandivli (W), Mumbai - 400 067</td>
+            <td>400067</td>
+            <td>kandivali110@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>PANCHAVATI, NASHIK </td>
+            <td>111</td>
+            <td>0253-2629916/ 717</td>
+            <td>ABHY0065125</td>
+            <td>422065006</td>
+            <td>Nashik</td>
+             
+            <td>Nashik</td>
+            <td>4614, Laxmi Residency, Peth Road, Panchavati, Nashik -422003</td>
+            <td>422003</td>
+            <td>#N/A</td>
+        </tr>
+        <tr>
+            <td>INDIRA NAGAR, NASHIK</td>
+            <td>112</td>
+            <td>0253-2329560/ 61</td>
+            <td>ABHY0065124</td>
+            <td>422065005</td>
+            <td>Nashik</td>
+             
+            <td>Nashik</td>
+            <td>Ground Floor, Madhusudan Park, C Building, Indira Nagar, Bapu Bunglow Bus Stop, Wadala Patard Road, Nashik - 422009</td>
+            <td>422009</td>
+            <td>indiranagar112@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Talegaon, Dabhade </td>
+            <td>113</td>
+            <td>02114-224460/224470</td>
+            <td>ABHY0065122</td>
+            <td>411065017</td>
+            <td>Pune</td>
+             
+            <td>Pune</td>
+            <td>Ambika Corner Apartment, Plot No.6 & 7, Laxmibaug Colony, Talegaon Dabhade, Tal. Mawal, Dist. Pune - 410506</td>
+            <td>410506</td>
+            <td>talegaon113@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Samrat Nagar - Nanded</td>
+            <td>114</td>
+            <td>02462-284030/284230</td>
+            <td>ABHY0065123</td>
+            <td>431065103</td>
+            <td>Nanded</td>
+             
+            <td>Nanded</td>
+            <td>Plot No.10, 11, 12(D), The Nanded Town Market Area, Samrat Nagar, Near Annabhau Sathe Chowk, Nanded - 431602</td>
+            <td>431602</td>
+            <td>nanded114@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Lower Parel</td>
+            <td>115</td>
+            <td>022-24931482/87</td>
+            <td>ABHY0065070</td>
+            <td>400065070</td>
+            <td>MUMBAI</td>
+             
+            <td>GREATER MUMBAI</td>
+            <td>Block No.19,Ground Floor, Dhanraj Mill Compound,Sitaram Jadhav Marg, Lower Parel - 400013</td>
+            <td>400013</td>
+            <td>lowerparel115@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Lalbaug</td>
+            <td>116</td>
+            <td>022-23742274/75</td>
+            <td>ABHY0065071</td>
+            <td>400065071</td>
+            <td>MUMBAI</td>
+             
+            <td>GREATER MUMBAI</td>
+            <td>Shop No.6,7,8 & 9,Tambawala Bldg. No.1, 205, Kalachowky Road, D.L.Marg, Lalbaug, Mumbai - 400012</td>
+            <td>400012</td>
+            <td>lalbaug116@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Vikhorli East</td>
+            <td>117</td>
+            <td>022-25791070 / 71</td>
+            <td>ABHY0065072</td>
+            <td>400065072</td>
+            <td>MUMBAI</td>
+             
+            <td>GREATER MUMBAI</td>
+            <td>Kannamwar Nagar - Vikhroli (E) Branch Raigad Co.op. Housing Society, Bldg. No. 87 - B wing, Premises No. 102, Kannamwar Nagar -2. Vikhroli (E), Mumbai - 400083.</td>
+            <td>400083</td>
+            <td>vikhroili117@abhyudaya.com</td>
+        </tr>
+        <tr>
+            <td>Vikhorli (West)</td>
+            <td>118</td>
+            <td>022-25174388 , 25174389</td>
+            <td>ABHY0065073</td>
+            <td>400065073</td>
+            <td>MUMBAI</td>
+             
+            <td>GREATER MUMBAI</td>
+            <td>Vikhroli West Shop no.1 MayFair Symphony Spring, Parksite,Godrej Hiranandani Link Road, Vikhroli (West),Mumbai-400079</td>
+            <td>400079</td>
+            <td>#N/A</td>
+        </tr>
+        <tr>
+            <td>Kausa - Mumbra</td>
+            <td>119</td>
+            <td>022-25495095 , 25495099</td>
+            <td>ABHY0065074</td>
+            <td>400065074</td>
+            <td>Thane</td>
+             
+            <td>Thane</td>
+            <td>VIRANI BUSINESS CENTER SHOP NO.1-4,PLOT NO.96/2, OPP. BHARAT GEARS COMPANY KAUSA-400612</td>
+            <td>400612</td>
+            <td>#N/A</td>
+        </tr>
+        <tr>
+            <td>Ulwe</td>
+            <td>120</td>
+            <td>9833972563</td>
+            <td>ABHY0065075</td>
+            <td>400065075</td>
+            <td>Raigad</td>
+             
+            <td>Raigad</td>
+            <td>PRATHMESH PRIDE SHOP NO.1,2 & 3,PLOT NO.06, SECTOR -19,ULWE-410 206</td>
+            <td>410206</td>
+            <td>#N/A</td>
+        </tr>
+        <tr>
+            <td>Ahmednagar, Savedi Road</td>
+            <td>121</td>
+            <td>0241-2356558 , 2346558</td>
+            <td>ABHY0065126</td>
+            <td>414065001</td>
+            <td>Ahmednagar</td>
+             
+            <td>Ahmednagar</td>
+            <td>Sai Midas Touch, Shop No.6/7 Plot no.101/86, Nagar- Manmad Road, Savedi Road ,Ahmednagar-414003</td>
+            <td>414003</td>
+            <td>#N/A</td>
+        </tr>
+        <tr>
+            <td>Kurla (West)</td>
+            <td>122</td>
+            <td>022-26503002/3</td>
+            <td>ABHY0065076</td>
+            <td>400065076</td>
+            <td>MUMBAI</td>
+             
+            <td>GREATER MUMBAI</td>
+            <td>Shop No.1 & 2, Sanghavi Palace, Belgrami Road, Kurla (West) Mumbai 400070</td>
+            <td>400070</td>
+            <td>#N/A</td>
+        </tr>
+        <tr>
+            <td>Pen</td>
+            <td>123</td>
+            <td>02143-252188/244</td>
+            <td>ABHY0065077</td>
+            <td>402065051</td>
+            <td>Raigad</td>
+             
+            <td>Raigad</td>
+            <td>REDWOOD CITY PLAZA,Shop No.4,5 & 6 PLOT NO. C-13,S. No.242B,Near ICE FACTORY PEN -402107</td>
+            <td>402107</td>
+            <td>#N/A</td>
+        </tr>
+
+      </tr>
+ 
+    
+
+
+
+</table>
+</body>
+</html>
