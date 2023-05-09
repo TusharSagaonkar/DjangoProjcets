@@ -53,25 +53,60 @@ body {
     background: linear-gradient(to bottom right, #66ccff 0%, #ffff66 100%);
 }
 
+/* CSS */
+.button-67 {
+  align-items: center;
+  background: #f5f5fa;
+  border: 0;
+  border-radius: 8px;
+  box-shadow: -10px -10px 30px 0 #fff,10px 10px 30px 0 #1d0dca17;
+  box-sizing: border-box;
+  color: #2a1f62;
+  cursor: pointer;
+  display: flex;
+  font-family: "Cascadia Code",Consolas,Monaco,"Andale Mono","Ubuntu Mono",monospace;
+  font-size: 1rem;
+  justify-content: center;
+  line-height: .4rem;
+  padding: 15px;
+  position: relative;
+  text-align: left;
+  transition: .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: pre;
+  width: max-content;
+  word-break: normal;
+  word-spacing: normal;
+}
+
+.button-67:hover {
+  background: #f8f8ff;
+  box-shadow: -15px -15px 30px 0 #fff, 15px 15px 30px 0 #1d0dca17;
+}
+
+@media (min-width: 768px) {
+  .button-67 {
+    padding: 24px;
+  }
+}
+        
+
+/* Parent background */
+#F5F5FA
 
 
+  
 </style>
 </head>
 <body>
-
-<h1>Abhyudaya Bank</h1>  
-
-<script> 
-//var fdate = new Date();
-//var cdate = new Date(new Date().getFullYear(),0,1);
-//var day = parseInt((fdate - cdate) / (1000 * 60 * 60 * 24), 10);
-//var last = (new Date().getFullYear()+'').slice(-1);
-//document.write(new Date().toLocaleDateString());
-//document.write(" : ")
-//document.write(last,"",day,);
-</script>
-
-
+<table width=100%>
+  <tr>
+    <td width=80% align=center><h1>Abhyudaya Bank</h1></td>
+    <td width=20%><input type="button" class="button-67" role="button" onclick="window.location.href='https://tushar.tusharsagaonkar.repl.co/admin/login/?next=/admin/';" value="Login"></td>
+  </tr>
+</table>
 
 
 <input type="text" id="myInput" onkeyup='searchTable()' placeholder="Type Branch Name or anything" title="Type Branch Name or anything">
@@ -123,8 +158,7 @@ function myFunction() {
 }
 </script>
 
-
-
+  
 
 <table id="myTable">
  
