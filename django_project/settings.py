@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'BranchFinder',
+  
 ]
 
 MIDDLEWARE = [
@@ -108,7 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
         'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
+#AUTH_USER_MODEL = 'BranchFinder.Users'
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
@@ -136,20 +137,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 JAZZMIN_SETTINGS = {
     #"site_logo": ".\img\ABCBank.png",
-    "site_icon":
-    None,
+    "site_icon": None,
     #"login_logo": None,
-    "site_header":
-    "Abhyudaya Bank",
-    "welcome_sign":
-    "Abhyudaya Digital Products",
-    "site_title":
-    "Abhyudaya Digital Banking",
-    "site_brand":
-    "Digital Products",
-    "use_google_fonts_cdn":
-    True,
-    "topmenu_links": [
+    "site_header": "Abhyudaya Bank",
+    "welcome_sign": "Abhyudaya Digital Products",
+    "site_title": "Abhyudaya Digital Banking",
+    "site_brand": "Digital Products",
+    "use_google_fonts_cdn": True,
+    "topmenu_links": 
+    [
         # Url that gets reversed (Permissions can be added)
         {
             "name": "Home",
@@ -162,5 +158,5 @@ JAZZMIN_SETTINGS = {
             "url": "https://tushar.tusharsagaonkar.repl.co/",
             "new_window": True
         },
-    ],
+   ],
 }

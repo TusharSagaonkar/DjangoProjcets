@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Link List</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Additional Custom Styling */
+        .copied {
+            background-color: green;
+            color: white;
+        }
+
+        /* Set column widths */
+        .link-name-column {
+            width: 80%;
+        }
+
+        .copy-column, .open-column {
+            width: 10%;
+        }
+    </style>
+    <script>
+        function copyToClipboard(button, text) {
+            const el = document.createElement('textarea');
+            el.value = text;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+
+            button.classList.add('copied');
+            button.textContent = 'Copied';
+        }
+
+        function openInWindow(link) {
+            window.open(link);
+        }
+
+        function filterLinks() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const linkRows = document.querySelectorAll('.link-row');
+
+            linkRows.forEach(row => {
+                const linkName = row.querySelector('.link-name').textContent.toLowerCase();
+                if (linkName.includes(searchTerm)) {
+                    row.style.display = 'table-row';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="mb-4">All URLs in one place</h1>
+        <input type="text" id="searchInput" class="form-control mb-3" placeholder="Search by Link Name" oninput="filterLinks()">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="link-name-column">Link Name</th>
+                    <th class="copy-column">Copy</th>
+                    <th class="open-column">Open</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for link in links %}
+                    <tr class="link-row">
+                        <td class="link-name">{{ link.LinkName }}</td>
+                        <td>
+                            <button class="btn btn-primary" onclick="copyToClipboard(this, '{{ link.Link }}')">Copy</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-secondary" onclick="openInWindow('{{ link.Link }}')">Open</button>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Include Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+{% endblock %}

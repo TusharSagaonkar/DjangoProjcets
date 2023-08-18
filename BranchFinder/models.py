@@ -1,4 +1,7 @@
 from django.db import models
+from django.contrib.auth.models import User
+from django.conf import settings
+
 
 class Branch(models.Model):
   BranchName = models.CharField(max_length=255,unique=True)
@@ -10,8 +13,7 @@ class Branch(models.Model):
   Address  = models.CharField(max_length=300)
   PinCode = models.IntegerField()
   Email = models.EmailField(max_length=254, unique=True)
-  def __str__(self):
-        return self.BranchName
+
   class Meta:
         verbose_name = "Branch"
         verbose_name_plural = "Branch's Data"
@@ -33,12 +35,31 @@ class Passw(models.Model):
                                       default = '1')
   UserName = models.CharField(max_length=50)
   Password = models.CharField(max_length=50)
+
+  
   class Meta:
         unique_together = ('ApplicationName', 'UserName')
         verbose_name = "Password"
         verbose_name_plural = "Password Manager"
-  
   def __str__(self):
-        return self.UserName
+        return self.title
+
+
+Link_CHOICES = (
+    ("1", "Abhyudaya"),
+    ("2", "NPCI"), 
+    ("3", "Internet"),
+)
+class LinksMaster(models.Model):
+  LinkType=models.CharField(max_length=50,
+                            choices = Link_CHOICES,
+                            default = '1')
+  LinkName=models.CharField(max_length=50)
+  Link=models.CharField(max_length=500)
+  class Meta:
+        unique_together = ('LinkType', 'LinkName')
+        verbose_name = "Links"
+        verbose_name_plural = "Links Manager"
+
   
 

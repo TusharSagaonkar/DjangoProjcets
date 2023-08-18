@@ -1,7 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+{% extends 'base.html' %}
+{% block content %}
+
 <style>
 * {
   box-sizing: border-box;
@@ -101,14 +100,7 @@ body {
 </style>
 </head>
 <body>
-<table width=100%>
-  <tr>
-    <td width=80% align=center><h1>Abhyudaya Bank</h1></td>
-    <td width=20%><input type="button" class="button-67" role="button" onclick="window.location.href='https://tushar.tusharsagaonkar.repl.co/admin/login/?next=/admin/';" value="Login"></td>
-  </tr>
-</table>
-
-
+<br>
 <input type="text" id="myInput" onkeyup='searchTable()' placeholder="Type Branch Name or anything" title="Type Branch Name or anything">
 <input type="text" id="myInput2" onkeyup="myFunction()" placeholder="Type Branch Number" title="Type Branch Number">
 <script>
@@ -158,14 +150,15 @@ function myFunction() {
 }
 </script>
 
-  
 
+
+  
 <table id="myTable">
  
 
   <tr class="header">
             <th>Branch Name</th>
-            <th>br</th>
+            <th>Br</th>
             <th>Contact</th>
             <th>IFSC Code</th>
             <th>MICR CODE</th>
@@ -190,4 +183,5 @@ function myFunction() {
 
 </table>
 </body>
-</html>
+
+{% endblock %}

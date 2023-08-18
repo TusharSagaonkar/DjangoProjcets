@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhyuday Bank</title>
+    <!-- Add Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: 'Helvetica Neue', sans-serif;
+        }
+        header {
+            background-color: #003366;
+            color: #ffffff;
+            padding: 20px 0;
+        }
+        nav {
+            background-color: #f8f9fa;
+            padding: 10px 0;
+        }
+        nav a {
+            color: #333333;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #007bff;
+        }
+        main {
+            padding: 30px;
+        }
+        footer {
+            background-color: #003366;
+            color: #ffffff;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="text-center">
+        <h1 style="font-size: 36px;">Abhyudaya Bank</h1>
+    </header>
+    <nav class="text-center">
+        <a href="home">Home</a>
+        <a href="link">URL Finder</a>
+        <a href="{% url 'RRN' %}">RRN Date Finder</a>
+        <a href="{% url 'BranchFinder' %}">Branch Finder</a>
+        <a href="admin">Login</a>
+    </nav>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    
+    <footer class="text-center">
+        <p>&copy; 2023 Abhyudaya Bank. All rights reserved.</p>
+    </footer>
+    <!-- Add Bootstrap JS and Popper.js scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
